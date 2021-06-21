@@ -1,10 +1,14 @@
 # php-crud
+
+
 Title: Create, Read, Update, Delete
 Repository: php-crud
 Type of Challenge: Learning Challenge
 Duration: 3 days
 Deployment strategy : NA
 Team challenge : team of 3
+
+
 Learning objectives
 
 - [ ] To be able to connect to a database
@@ -12,6 +16,8 @@ Learning objectives
 - [ ] Use a provided MVC structure to work into.
 
 The Mission
+- [x] Created diagram and database in DataGrip
+![Screenshot 2021-06-21 145212](https://user-images.githubusercontent.com/68239365/122765039-5f46ae00-d2a0-11eb-8daa-2e13466ec848.png)
 - [ ] Create a CRUD system to store student, teacher and class information in the database. 
 
 
