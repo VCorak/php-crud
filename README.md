@@ -7,7 +7,7 @@ Deployment strategy : NA
 Team challenge : team of 3
 Learning objectives
 
-[] To be able to connect to a database
+-[] To be able to connect to a database
 [] To be able to write a simple Create, Read, Update & Delete (CRUD) application
 [] Use a provided MVC structure to work into.
 
