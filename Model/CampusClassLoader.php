@@ -3,18 +3,18 @@
 
 class CampusClassLoader
 {
-    private array $classes;
+    private array $classes = [];
 
 
     public function __construct()
     {
-        $con = Database::openConnection();
+        $con = Database::connect();
         $handle = $con->prepare('SELECT * FROM class');
         $handle->execute();
         $selectedClass = $handle->fetchAll();
 
         foreach ($selectedClass as $class) {
-            $this->classes[] = new CampusClass((int)$class['Id'], $class['Name'], $class['Location'],(int)$class['TeacherId']);
+            $this->classes[] = new CampusClass((int)$class['class_id'], $class['name'], $class['location'],(int)$class['teacher_id']);
         }
     }
 

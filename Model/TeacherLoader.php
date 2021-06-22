@@ -3,17 +3,17 @@
 class TeacherLoader
 
 {
-    private array $teachers;
+    private array $teachers = [];
 
     public function __construct()
     {
         $con = Database::connect();
-        $handle = $con->prepare('SELECT * FROM teachers');
+        $handle = $con->prepare('SELECT * FROM teacher');
         $handle->execute();
         $selectedTeachers = $handle->fetchAll();
 
         foreach ($selectedTeachers as $teacher) {
-            $this->teachers[] = new Teacher((int)$teacher['id'], $teacher['class_id'], $teacher['name'], (int)$teacher['email']);
+            $this->teachers[] = new Teacher((int)$teacher['teacher_id'], $teacher['name'], (int)$teacher['email'], $teacher['class_id']);
         }
     }
 

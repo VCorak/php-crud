@@ -4,17 +4,17 @@
 class StudentLoader
 
 {
-    private array $students;
+    private array $students = [];
 
     public function __construct()
     {
         $con = Database::connect();
-        $handle = $con->prepare('SELECT * FROM students');
+        $handle = $con->prepare('SELECT * FROM student');
         $handle->execute();
         $selectedStudents = $handle->fetchAll();
 
         foreach ($selectedStudents as $student) {
-            $this->students[] = new Student((int)$student['id'], $student['name'], $student['email'], (int)$student['class_id']);
+            $this->students[] = new Student((int)$student['student_id'], $student['name'], $student['email'], (int)$student['class_id']);
         }
     }
 
