@@ -17,12 +17,12 @@ function whatIsHappening() {
 require 'Model/Database.php';
 require 'Model/Teacher.php';
 require 'Model/Student.php';
-require 'Model/StudentLoader.php';
-require 'Model/TeacherLoader.php';
-
+require 'Model/CampusClass.php';
 
 //Loader models
-
+require 'Model/TeacherLoader.php';
+require 'Model/StudentLoader.php';
+require 'Model/CampusClassLoader.php';
 
 //include all your controllers here
 
