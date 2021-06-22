@@ -12,7 +12,6 @@ class TeacherController
         var_dump($allTeachers);
 
 
-
         require 'View/teacher.php';
     }
 }
