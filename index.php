@@ -18,6 +18,7 @@ require 'Model/Database.php';
 require 'Model/Teacher.php';
 require 'Model/Student.php';
 require 'Model/CampusClass.php';
+require 'Model/User.php';
 
 //Loader models
 require 'Model/TeacherLoader.php';
@@ -25,10 +26,16 @@ require 'Model/StudentLoader.php';
 require 'Model/CampusClassLoader.php';
 
 //include all your controllers here
+require 'Controller/HomepageController.php';
+require 'Controller/InfoController.php';
 
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
 //this file should never be more than 20 lines of code!
 
-/*$controller = new HomepageController();
-$controller->render($_GET, $_POST);*/
+$controller = new HomepageController();
+if(isset($_GET['page']) && $_GET['page'] === 'info') {
+    $controller = new InfoController();
+}
+
+$controller->render($_GET, $_POST);
