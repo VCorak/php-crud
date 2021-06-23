@@ -17,7 +17,8 @@ Learning objectives
 
 The Mission
 - [x] Created diagram and database in DataGrip
-![Screenshot 2021-06-21 145212](https://user-images.githubusercontent.com/68239365/122765039-5f46ae00-d2a0-11eb-8daa-2e13466ec848.png)
+![Screenshot 2021-06-23 165318](https://user-images.githubusercontent.com/68239365/123121221-47f4f580-d445-11eb-82ac-21a6f1dfa119.png)
+
 - [x] Create a CRUD system to store student, teacher and class information in the database. 
 
 
