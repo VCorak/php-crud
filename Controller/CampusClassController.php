@@ -12,6 +12,7 @@ class CampusClassController
 
 
 
+
         require 'View/CampusClass.php';
     }
 }

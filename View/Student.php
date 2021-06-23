@@ -1,12 +1,53 @@
 <?php require 'includes/header.php' ?>
 
-<section class="section">
-    <div class="container">
-                <?php var_dump($allStudents); ?>
+<section>
+    <h4>Student Table</h4>
+    <p><a href="index.php">Back to homepage</a></p>
+    <p><a href="index.php?page=student">Student Table</a></p>
+    <p><a href="index.php?page=class">Class Table</a></p>
+    <p><a href="index.php?page=teacher">Teacher Table</a></p>
 
-    </div>
+    <form action="" method="POST">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>ClassID</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="name" name="name"></td>
+                <td><input id="email" name="email"></td>
+                <td><select name="classId"></select></td>
+                <td>
+                    <button name="add" value="add">Add</button>
+                </td>
+            </tr>
+            <?php
+            foreach ($allStudents as $studentData) {
+                echo '<tr>
+                    <td>' .$studentData->getId() .'</td>
+                    <td>' .$studentData->getName() .'</td>
+                    <td>' .$studentData->getEmail() .'</td>
+                    <td>' .$studentData->getClassId() .'</td>
+                    </tr>';
+            }
+            ?>
+
+            </td>
+            <td>
+                <button name="update" value="' . $row->getId() . '">Update</button>
+            </td>
+            <td>
+                <button name="delete" value="' . $row->getId() . '">Delete</button>
+            </td>
+            </tr>
+
+
+        </table>
+    </form>
 </section>
-
 
 
 <?php require 'includes/footer.php' ?>
