@@ -10,7 +10,7 @@ class StudentController
         // $loader is array filled with objects
         $loader = new StudentLoader();
         $allStudents = $loader->getStudents();
-        var_dump($allStudents);
+
 
 
 

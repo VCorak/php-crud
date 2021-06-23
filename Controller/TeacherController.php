@@ -9,7 +9,7 @@ class TeacherController
 
         $loaderTeacher = new TeacherLoader();
         $allTeachers = $loaderTeacher->getTeachers();
-        var_dump($allTeachers);
+
 
 
         require 'View/teacher.php';

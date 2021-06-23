@@ -13,7 +13,7 @@ class TeacherLoader
         $selectedTeachers = $handle->fetchAll();
 
         foreach ($selectedTeachers as $teacher) {
-            $this->teachers[] = new Teacher((int)$teacher['teacher_id'], $teacher['name'], (int)$teacher['email'], $teacher['class_id']);
+            $this->teachers[] = new Teacher((int)$teacher['teacher_id'], $teacher['name'], $teacher['email']);
         }
     }
 

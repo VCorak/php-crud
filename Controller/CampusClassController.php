@@ -9,8 +9,8 @@ class CampusClassController
 
         $loaderClasses = new CampusClassLoader();
         $allClasses = $loaderClasses->getClasses();
-        var_dump($allClasses);
-        
+
+
 
         require 'View/CampusClass.php';
     }
