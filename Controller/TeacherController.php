@@ -8,8 +8,13 @@ class TeacherController
     {
 
         $loaderTeacher = new TeacherLoader();
-        $allTeachers = $loaderTeacher->getTeachers();
 
+
+        if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
+            $loaderTeacher->addTeacher($POST['name'], $POST['email']);
+        }
+
+        $allTeachers = $loaderTeacher->getTeachers();
 
 
         require 'View/teacher.php';

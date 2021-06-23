@@ -29,20 +29,16 @@
                 echo '<tr>
                     <td>' .$teacherData->getId() .'</td>
                     <td>' .$teacherData->getName() .'</td>
-                    <td>' .$teacherData->getEmail() .'</td
+                    <td>' .$teacherData->getEmail() .'</td>
+                     <td>
+                <button name="update" value="' . $teacherData->getId() . '">Update</button>
+            </td>
+            <td>
+                <button name="delete" value="' . $teacherData->getId() . '">Delete</button>
+            </td>
                     </tr>';
             }
             ?>
-
-            </td>
-            <td>
-                <button name="update" value="' . $row->getId() . '">Update</button>
-            </td>
-            <td>
-                <button name="delete" value="' . $row->getId() . '">Delete</button>
-            </td>
-            </tr>
-
 
         </table>
     </form>

@@ -13,13 +13,25 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>ClassID</th>
+                <th>Class</th>
             </tr>
             <tr>
                 <td></td>
                 <td><input id="name" name="name"></td>
                 <td><input id="email" name="email"></td>
-                <td><select name="classId"></select></td>
+                <td><select name="classId">
+                        <?php
+
+                        foreach ($allClasses as $classData) {
+                            echo '
+                            <option value="' .$classData->getId() .'">
+                            ' .$classData->getName() .'
+</option>
+                            ';
+                        }
+
+                        ?>
+                    </select></td>
                 <td>
                     <button name="add" value="add">Add</button>
                 </td>
@@ -31,18 +43,16 @@
                     <td>' .$studentData->getName() .'</td>
                     <td>' .$studentData->getEmail() .'</td>
                     <td>' .$studentData->getClassId() .'</td>
+                    <td>
+                <button name="update" value="' . $studentData->getId() . '">Update</button>
+            </td>
+            <td>
+                <button name="delete" value="' . $studentData->getId() . '">Delete</button>
+            </td>
                     </tr>';
             }
             ?>
 
-            </td>
-            <td>
-                <button name="update" value="' . $row->getId() . '">Update</button>
-            </td>
-            <td>
-                <button name="delete" value="' . $row->getId() . '">Delete</button>
-            </td>
-            </tr>
 
 
         </table>
