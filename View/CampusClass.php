@@ -18,8 +18,21 @@
             <tr>
                 <td></td>
                 <td><input id="name" name="name"></td>
-                <td><input id="email" name="email"></td>
-                <td><select name="classId"></select></td>
+                <td><input id="location" name="location"></td>
+                <td><select name="teacherId">
+                        <?php
+
+                        foreach ($allTeachers as $teachersData) {
+                            echo '
+                            <option value="' .$teachersData->getId() .'">
+                            ' .$teachersData->getName() .'
+</option>
+                            ';
+                        }
+
+                        ?>
+
+                    </select></td>
                 <td>
                     <button name="add" value="add">Add</button>
                 </td>
@@ -30,20 +43,18 @@
                     <td>' .$classesData->getId() .'</td>
                     <td>' .$classesData->getName() .'</td>
                     <td>' .$classesData->getLocation() .'</td>
-                    <td>' .$classesData->getTeacherId() .'</td>
+                    <td>' .$classesData->getTeacherId() .'
+             
+                   </td>
+                <td>    
+                <button name="update" value="' . $classesData->getId() . '">Update</button>
+            </td>
+            <td>
+                <button name="delete" value="' . $classesData->getId() . '">Delete</button>
+            </td>
                     </tr>';
             }
             ?>
-
-            </td>
-            <td>
-                <button name="update" value="' . $row->getId() . '">Update</button>
-            </td>
-            <td>
-                <button name="delete" value="' . $row->getId() . '">Delete</button>
-            </td>
-            </tr>
-
 
         </table>
     </form>

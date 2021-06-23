@@ -15,6 +15,7 @@ class StudentController
         if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
         $loader->addStudent($POST['name'], $POST['email'], $POST['classId']);
         }
+
         $allStudents = $loader->getStudents();
         $allClasses = $loader2->getClasses();
 
