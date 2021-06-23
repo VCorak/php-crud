@@ -9,7 +9,7 @@ class CampusClassController
 
         $loaderClasses = new CampusClassLoader();
         $loaderTeacher = new TeacherLoader();
-        
+
         if (isset($POST['name']) and isset($POST['location']) and isset($POST['add'])) {
             $loaderClasses->addClass($POST['name'], $POST['location'], $POST['teacherId']);
         }
