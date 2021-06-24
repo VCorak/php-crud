@@ -16,6 +16,8 @@ class CampusClass
         $this->teacherId = $teacherId;
     }
 
+    // get the values
+
     public function getId(): int
     {
         return $this->id;

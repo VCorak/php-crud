@@ -28,7 +28,6 @@ class CampusClassLoader
         }
     }
 
-
     public function getClassById(int $id)
     {
         foreach ($this->classes as $class) {
@@ -38,7 +37,7 @@ class CampusClassLoader
         }
     }
 
-    public function addClass($name, $location, $teacherId) {
+    public function addClass($name, $location, $teacherId) { // connecting teacher with the class
         $con = Database::connect();
         $handle = $con->prepare('INSERT INTO class (name, location, teacher_id) VALUES(:name, :location, :teacherid)');
         $handle->bindValue(':name', $name);
@@ -50,15 +49,15 @@ class CampusClassLoader
     public function deleteCampusClassById($id)
     {
         $con = Database::connect();
-        $handle = $con->prepare('UPDATE student SET class_id = NULL WHERE class_id = :id');
+        $handle = $con->prepare('UPDATE student SET class_id = NULL WHERE class_id = :id'); // if I want to remove class id from student (class_id= null), first update it in student then...
         $handle->bindValue(':id', $id);
         $handle->execute();
-        $handle = $con->prepare('DELETE FROM class WHERE class_id = :id');
+        $handle = $con->prepare('DELETE FROM class WHERE class_id = :id'); // ...delete connected class_id between student and class
         $handle->bindValue(':id', $id);
         $handle->execute();
     }
 
-    public function updateCampusClassById($name, $location, $teacherId, $id)
+    public function updateCampusClassById($name, $location, $teacherId, $id) // just updating the class value if I change the class??
     {
         $con = Database::connect();
         $handle = $con->prepare('UPDATE class set name = :name, location = :location, teacher_id = :teacherId WHERE class_id = :id ');
