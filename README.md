@@ -35,11 +35,11 @@ Must-have features
 A general overview of all records of that entity in a table
 
 - [x] Each row should have a button to edit or delete the entity
-- [ ] This page should have a "create new" button
-- [ ] A detailed overview of the selected entity
+- [x] This page should have a "create new" button
+- [x] A detailed overview of the selected entity
 - [x] This should include a button to delete this entity
-- [ ] Edge case: A teacher cannot be removed if he is still assigned to a class
-- [ ] Edge case: If you remove a class, make sure to remove the link between the students and the class.
+- [x] Edge case: A teacher cannot be removed if he is still assigned to a class
+- [x] Edge case: If you remove a class, make sure to remove the link between the students and the class.
 - [ ] A page to edit an existing entity
 - [ ] A page to create a new entity
 
@@ -49,18 +49,18 @@ On the general overview table you can yourself decide what would be useful infor
 
 On the detailed overview you have to provide the following information:
 
-- [ ] Student
+- [x] Student
 Name
 Email
 Class (with clickable link)
 Assigned teacher (clickable link - relation via class)
 
-- [ ] Teacher
+- [x] Teacher
 Name
 Email
 List of all students currently assigned to him (clickable link)
 
-- [ ] Class
+- [x] Class
 Name class (Giertz, Lamarr, ...)
 Location (Antwerp, Gent, Genk, Brussels, Liege)
 Assigned teacher (clickable link)
