@@ -46,12 +46,22 @@ class TeacherLoader
         $handle->execute();
     }
 
-    public function deleteTeacherById($id)
+    public function deleteTeacherById($id) // EDGE CASE: a teacher can not be removed if he is still assigned to class- first I check if teacher is assigned
+        // to class (SELECT * FROM class WHERE teacher_id = :id) and if it is returning a message, if not can be deleted (DELETE FROM teacher WHERE teacher_id = :id)
     {
         $con = Database::connect();
-        $handle = $con->prepare('DELETE FROM teacher WHERE teacher_id = :id');
+        $handle = $con->prepare('SELECT * FROM class WHERE teacher_id = :id');
         $handle->bindValue(':id', $id);
         $handle->execute();
+        $checkClass = $handle->fetchAll();
+
+        if (!empty($checkClass)) {
+            return "Teacher is still assigned to a class";
+        } else {
+            $handle = $con->prepare('DELETE FROM teacher WHERE teacher_id = :id');
+            $handle->bindValue(':id', $id);
+            $handle->execute();
+        }
     }
 
     public function updateTeacherById($name, $email, $id)

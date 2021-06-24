@@ -8,6 +8,7 @@
     <p><a href="index.php?page=teacher">Teacher Table</a></p>
 
     <form action="" method="POST">
+        <h3><?php if(isset($teacherMessage)){echo( $teacherMessage) ;} ?></h3>
         <table>
             <tr>
                 <th>ID</th>
