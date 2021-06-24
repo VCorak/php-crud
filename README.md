@@ -36,7 +36,7 @@ A general overview of all records of that entity in a table
 
 - [x] Each row should have a button to edit or delete the entity
 - [x] This page should have a "create new" button
-- [x] A detailed overview of the selected entity
+- [ ] A detailed overview of the selected entity
 - [x] This should include a button to delete this entity
 - [x] Edge case: A teacher cannot be removed if he is still assigned to a class
 - [x] Edge case: If you remove a class, make sure to remove the link between the students and the class.
