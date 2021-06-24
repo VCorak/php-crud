@@ -51,4 +51,25 @@ class StudentLoader
         $handle->execute();
 
     }
+
+    public function deleteStudentById($id)
+    {
+        $con = Database::connect();
+        $handle = $con->prepare('DELETE FROM student WHERE student_id = :id');
+        $handle->bindValue(':id', $id);
+        $handle->execute();
+    }
+
+    public function updateStudentById($name, $email, $classId, $id)
+    {
+        $con = Database::connect();
+        $handle = $con->prepare('UPDATE student set name = :name, email = :email, class_id = :classId WHERE student_id = :id');
+        $handle->bindValue(':name', $name);
+        $handle->bindValue(':email', $email);
+        $handle->bindValue(':classId', $classId);
+        $handle->bindValue(':id', $id);
+        $handle->execute();
+    }
 }
+
+

@@ -14,6 +14,10 @@ class StudentController
 
         if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
         $loader->addStudent($POST['name'], $POST['email'], $POST['classId']);
+        } elseif (isset($POST['delete'])) {
+            $loader->deleteStudentById($POST['delete']);
+        } elseif (isset($POST['update'])) {
+            $loader->updateStudentById($POST['name'], $POST['email'], $POST['classId'], $POST['update']);
         }
 
         $allStudents = $loader->getStudents();
