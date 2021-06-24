@@ -12,7 +12,11 @@ class CampusClassController
 
         if (isset($POST['name']) and isset($POST['location']) and isset($POST['add'])) {
             $loaderClasses->addClass($POST['name'], $POST['location'], $POST['teacherId']);
-        }
+        } elseif (isset($POST['delete'])) {
+            $loaderClasses->deleteCampusClassById($POST['delete']);
+            } elseif (isset($POST['update'])) {
+            $loaderClasses->updateCampusClassById($POST['name'], $POST['location'], $POST['teacherId'], $POST['update']);
+    }
 
         $allClasses = $loaderClasses->getClasses();
         $allTeachers = $loaderTeacher->getTeachers();

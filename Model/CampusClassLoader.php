@@ -47,4 +47,23 @@ class CampusClassLoader
         $handle->execute();
     }
 
+    public function deleteCampusClassById($id)
+    {
+        $con = Database::connect();
+        $handle = $con->prepare('DELETE FROM class WHERE class_id = :id');
+        $handle->bindValue(':id', $id);
+        $handle->execute();
+    }
+
+    public function updateCampusClassById($name, $location, $teacherId, $id)
+    {
+        $con = Database::connect();
+        $handle = $con->prepare('UPDATE class set name = :name, location = :location, teacher_id = :teacherId WHERE class_id = :id ');
+        $handle->bindValue(':name', $name);
+        $handle->bindValue(':location', $location);
+        $handle->bindValue(':teacherId', $teacherId);
+        $handle->bindValue(':id', $id);
+        $handle->execute();
+    }
+
 }
