@@ -24,7 +24,7 @@
 
                         foreach ($allTeachers as $teachersData) {
                             echo '
-                            <option value="' .$teachersData->getId() .'">
+                            <option value="' .$teachersData->getId() .'"> // dropdown menu for teachers name
                             ' .$teachersData->getName() .'
 </option>
                             ';
