@@ -55,8 +55,8 @@ class TeacherLoader
         $handle->execute();
         $checkClass = $handle->fetchAll();
 
-        if (!empty($checkClass)) {
-            return "Teacher is still assigned to a class";
+        if (!empty($checkClass)) { // if teacher does not have assigned class echo a message
+            return "Teacher is still assigned to a class"; // echo it in the teacher view!!
         } else {
             $handle = $con->prepare('DELETE FROM teacher WHERE teacher_id = :id');
             $handle->bindValue(':id', $id);
