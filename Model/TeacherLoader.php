@@ -45,5 +45,23 @@ class TeacherLoader
         $handle->bindValue(':email', $email);
         $handle->execute();
     }
+
+    public function deleteTeacherById($id)
+    {
+        $con = Database::connect();
+        $handle = $con->prepare('DELETE FROM teacher WHERE teacher_id = :id');
+        $handle->bindValue(':id', $id);
+        $handle->execute();
+    }
+
+    public function updateTeacherById($name, $email, $id)
+    {
+        $con = Database::connect();
+        $handle = $con->prepare('UPDATE teacher set name = :name, email = :email WHERE teacher_id = :id');
+        $handle->bindValue(':name', $name);
+        $handle->bindValue(':email', $email);
+        $handle->bindValue(':id', $id);
+        $handle->execute();
+    }
 }
 

@@ -12,7 +12,11 @@ class TeacherController
 
         if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
             $loaderTeacher->addTeacher($POST['name'], $POST['email']);
-        }
+        }  elseif (isset($POST['delete'])) {
+            $loaderTeacher->deleteTeacherById($POST['delete']);
+            } elseif (isset($POST['update'])) {
+            $loaderTeacher->updateTeacherById($POST['name'], $POST['email'], $POST['update']);
+}
 
         $allTeachers = $loaderTeacher->getTeachers();
 
