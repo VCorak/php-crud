@@ -12,7 +12,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Location</th>
-                <th>Teacher ID</th>
+                <th>Teacher ID & Name</th>
             </tr>
             <tr>
                 <td></td>
