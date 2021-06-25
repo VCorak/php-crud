@@ -13,7 +13,7 @@ class StudentController
 
         if (isset($GET['id'])) {
             $studentDetails = $loader->getStudentsById((int) $GET['id']);
-            require 'View/studentDetails.php';
+            require 'View/StudentDetails.php';
         } else {
 
             if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {

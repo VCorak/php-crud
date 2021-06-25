@@ -9,18 +9,24 @@ class TeacherController
 
         $loaderTeacher = new TeacherLoader();
 
+        if (isset($GET['id'])) {
+            $teacherDetails = $loaderTeacher->getTeachersById((int) $GET['id']);
+            require 'View/TeacherDetails.php';
+        } else {
 
-        if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
-            $loaderTeacher->addTeacher($POST['name'], $POST['email']);
-        }  elseif (isset($POST['delete'])) {
-            $teacherMessage = $loaderTeacher->deleteTeacherById($POST['delete']);
+
+            if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
+                $loaderTeacher->addTeacher($POST['name'], $POST['email']);
+            } elseif (isset($POST['delete'])) {
+                $teacherMessage = $loaderTeacher->deleteTeacherById($POST['delete']);
             } elseif (isset($POST['update'])) {
-            $loaderTeacher->updateTeacherById($POST['name'], $POST['email'], $POST['update']);
-}
+                $loaderTeacher->updateTeacherById($POST['name'], $POST['email'], $POST['update']);
+            }
 
-        $allTeachers = $loaderTeacher->getTeachers();
+            $allTeachers = $loaderTeacher->getTeachers();
 
 
-        require 'View/teacher.php';
+            require 'View/teacher.php';
+        }
     }
 }

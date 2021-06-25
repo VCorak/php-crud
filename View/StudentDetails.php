@@ -16,7 +16,6 @@
                     <th>Class name & ID</th>
                 </tr>
                 <tr>
-
                     <?php
                     echo '
                     <td>
@@ -41,7 +40,6 @@
                     ' . $studentDetails->getClassId() . ';
                      </td>'
                     ?>
-
 
                 </tr>
 
