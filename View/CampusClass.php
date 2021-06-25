@@ -48,6 +48,9 @@
             <td>
                 <button name="delete" value="' . $classesData->getId() . '">Delete</button>
             </td>
+            <td>
+            <a href="index.php?page=class&id=' .$classesData->getId() .'">Details</a>
+</td>
                     </tr>';
             }
             ?>

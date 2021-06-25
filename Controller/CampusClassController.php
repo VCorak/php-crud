@@ -10,18 +10,24 @@ class CampusClassController
         $loaderClasses = new CampusClassLoader();
         $loaderTeacher = new TeacherLoader();
 
-        if (isset($POST['name']) and isset($POST['location']) and isset($POST['add'])) {
-            $loaderClasses->addClass($POST['name'], $POST['location'], $POST['teacherId']);
-        } elseif (isset($POST['delete'])) {
-            $loaderClasses->deleteCampusClassById($POST['delete']);
+        if (isset($GET['id'])) {
+            $campusClassDetails = $loaderClasses->getClassById((int) $GET['id']);
+            require 'View/CampusClassDetails.php';
+        } else {
+
+            if (isset($POST['name']) and isset($POST['location']) and isset($POST['add'])) {
+                $loaderClasses->addClass($POST['name'], $POST['location'], $POST['teacherId']);
+            } elseif (isset($POST['delete'])) {
+                $loaderClasses->deleteCampusClassById($POST['delete']);
             } elseif (isset($POST['update'])) {
-            $loaderClasses->updateCampusClassById($POST['name'], $POST['location'], $POST['teacherId'], $POST['update']);
-    }
+                $loaderClasses->updateCampusClassById($POST['name'], $POST['location'], $POST['teacherId'], $POST['update']);
+            }
 
-        $allClasses = $loaderClasses->getClasses();
-        $allTeachers = $loaderTeacher->getTeachers();
+            $allClasses = $loaderClasses->getClasses();
+            $allTeachers = $loaderTeacher->getTeachers();
 
 
-        require 'View/CampusClass.php';
+            require 'View/CampusClass.php';
+        }
     }
 }
