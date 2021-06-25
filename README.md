@@ -1,13 +1,14 @@
 # php-crud
 
 
-Title: Create, Read, Update, Delete
-Repository: php-crud
-Type of Challenge: Learning Challenge
-Duration: 3 days
-Deployment strategy : NA
-Team challenge : team of 3
+Title: Create, Read, Update, Delete <br />
+Repository: php-crud <br />
+Type of Challenge: Learning Challenge <br />
+Duration: 5 days <br />
+Deployment strategy : NA <br />
+Team challenge : solo <br />
 
+This is my Trello board: https://trello.com/b/fDyhKGNE/agile-board
 
 Learning objectives
 
@@ -66,4 +67,4 @@ Class
 - [x] Assigned teacher (clickable link- do not have that)
 - [x] List of assigned students (clickable link- do not have that)
 
-This is my Trello board: https://trello.com/b/fDyhKGNE/agile-board
+
