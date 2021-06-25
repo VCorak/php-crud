@@ -16,12 +16,13 @@
                 <th>Name</th>
                 <th>Email</th>
 
+
             </tr>
             <tr>
                 <td></td>
                 <td><input id="name" name="name"></td>
                 <td><input id="email" name="email"></td>
-
+               
                 <td>
                     <button name="add" value="add">Add</button>
                 </td>
