@@ -11,18 +11,23 @@ class StudentController
         $loader = new StudentLoader();
         $loader2 = new CampusClassLoader();
 
+        if (isset($GET['id'])) {
+            $studentDetails = $loader->getStudentsById((int) $GET['id']);
+            require 'View/studentDetails.php';
+        } else {
 
-        if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
-        $loader->addStudent($POST['name'], $POST['email'], $POST['classId']);
-        } elseif (isset($POST['delete'])) {
-            $loader->deleteStudentById($POST['delete']);
-        } elseif (isset($POST['update'])) {
-            $loader->updateStudentById($POST['name'], $POST['email'], $POST['classId'], $POST['update']);
+            if (isset($POST['name']) and isset($POST['email']) and isset($POST['add'])) {
+                $loader->addStudent($POST['name'], $POST['email'], $POST['classId']);
+            } elseif (isset($POST['delete'])) {
+                $loader->deleteStudentById($POST['delete']);
+            } elseif (isset($POST['update'])) {
+                $loader->updateStudentById($POST['name'], $POST['email'], $POST['classId'], $POST['update']);
+            }
+
+            $allStudents = $loader->getStudents();
+            $allClasses = $loader2->getClasses();
+
+            require 'View/student.php';
         }
-
-        $allStudents = $loader->getStudents();
-        $allClasses = $loader2->getClasses();
-
-        require 'View/student.php';
     }
 }
