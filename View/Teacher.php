@@ -7,8 +7,9 @@
     <p><a href="index.php?page=class">Class Table</a></p>
     <p><a href="index.php?page=teacher">Teacher Table</a></p>
 
+
     <form action="" method="POST">
-        <h3><?php if(isset($teacherMessage)){echo( $teacherMessage) ;} ?></h3> // echoing the message if teacher is still assigned to class
+        <h3><?php if(isset($teacherMessage)){echo( $teacherMessage) ;} ?></h3>
         <table>
             <tr>
                 <th>ID</th>

@@ -13,7 +13,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Class</th>
+                <th>Class name & ID</th>
             </tr>
             <tr>
                 <td></td>

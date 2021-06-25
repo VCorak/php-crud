@@ -13,7 +13,6 @@
                 <th>Name</th>
                 <th>Location</th>
                 <th>Teacher ID</th>
-
             </tr>
             <tr>
                 <td></td>
@@ -21,17 +20,14 @@
                 <td><input id="location" name="location"></td>
                 <td><select name="teacherId">
                         <?php
-
-                        foreach ($allTeachers as $teachersData) {
+                        foreach ($allTeachers as $teachersData) { // dropdown menu for teachers name
                             echo '
-                            <option value="' .$teachersData->getId() .'"> // dropdown menu for teachers name
+                            <option value="' .$teachersData->getId() .'"> 
                             ' .$teachersData->getName() .'
 </option>
                             ';
                         }
-
                         ?>
-
                     </select></td>
                 <td>
                     <button name="add" value="add">Add</button>
