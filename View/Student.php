@@ -21,11 +21,10 @@
                 <td><input id="email" name="email"></td>
                 <td><select name="classId">
                         <?php
-
                         foreach ($allClasses as $classData) {
                             echo '
-                            <option value="' .$classData->getId() .'">
-                            ' .$classData->getName() .'
+                            <option value="' . $classData->getId() . '">
+                            ' . $classData->getName() . '
 </option>
                             ';
                         }
@@ -39,10 +38,10 @@
             <?php
             foreach ($allStudents as $studentData) {
                 echo '<tr>
-                    <td>' .$studentData->getId() .'</td>
-                    <td>' .$studentData->getName() .'</td>
-                    <td>' .$studentData->getEmail() .'</td>
-                    <td>' .$studentData->getClassId() .'</td>
+                    <td>' . $studentData->getId() . '</td>
+                    <td>' . $studentData->getName() . '</td>
+                    <td>' . $studentData->getEmail() . '</td>
+                    <td>' . $studentData->getClassId() . '</td>
                     <td>
                 <button name="update" value="' . $studentData->getId() . '">Update</button>
             </td>
