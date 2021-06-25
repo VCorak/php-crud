@@ -36,7 +36,7 @@ A general overview of all records of that entity in a table
 
 - [x] Each row should have a button to edit or delete the entity
 - [x] This page should have a "create new" button
-- [ ] A detailed overview of the selected entity
+- [x] A detailed overview of the selected entity
 - [x] This should include a button to delete this entity
 - [x] Edge case: A teacher cannot be removed if he is still assigned to a class
 - [x] Edge case: If you remove a class, make sure to remove the link between the students and the class.
@@ -49,21 +49,21 @@ On the general overview table you can yourself decide what would be useful infor
 
 On the detailed overview you have to provide the following information:
 
-- [x] Student
-Name
-Email
-Class (with clickable link)
-Assigned teacher (clickable link - relation via class)
+Student
+- [x] Name
+- [x] Email
+- [x] Class (with clickable link- do not have that)
+- [x] Assigned teacher (clickable link - relation via class- do not have that)
 
-- [x] Teacher
-Name
-Email
-List of all students currently assigned to him (clickable link)
+Teacher
+- [x] Name
+- [x] Email
+- [x] List of all students currently assigned to him (clickable link- do not have that)
 
-- [x] Class
-Name class (Giertz, Lamarr, ...)
-Location (Antwerp, Gent, Genk, Brussels, Liege)
-Assigned teacher (clickable link)
-List of assigned students (clickable link)
+Class
+- [x] Name class (Giertz, Lamarr, ...)
+- [x] Location (Antwerp, Gent, Genk, Brussels, Liege)
+- [x] Assigned teacher (clickable link- do not have that)
+- [x] List of assigned students (clickable link- do not have that)
 
 This is my Trello board: https://trello.com/b/fDyhKGNE/agile-board
